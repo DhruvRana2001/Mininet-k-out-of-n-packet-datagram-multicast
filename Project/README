@@ -1,0 +1,25 @@
+REQUIREMENTS :
+
+    Make Sure that all the following Ten (10) Files are in one folder :-
+        1. cleanup.py
+        2. Topo.py
+        3. NetworkNode.py
+        4. Network.py
+        5. NetworkMap.py
+        6. Packet.py
+        7. router.py
+        8. destination.py
+        9. sourec.py
+       10. multicastRP.py
+    
+    IF changing topology, please make sure to use the custom cls classes provided in Topo.py ("Follow the given topologies example") 
+    and DO NOT change the name of the class "topology".
+
+    IF you do not want to use custom cls, please ensure that you create a dict in "NetworkMap.py" and comment and uncomment appropriate lines 
+
+RUN :
+
+    If all requirements are met, navigate to the folder where all the files are saved and run :-
+        "$ sudo multicsatRP.py"
+    Then just follow the prompt and enter required info. to intialize the network
+

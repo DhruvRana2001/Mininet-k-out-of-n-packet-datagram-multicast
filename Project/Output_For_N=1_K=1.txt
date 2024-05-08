@@ -1,0 +1,588 @@
+Destination = D1
+-------------------------------------------------------------------------------------------------------------
+mininet@mininet-vm:~/Project$ sudo python3 multicastRP.py
+*** Creating network
+*** Adding hosts:
+S d1 d2 d3 r1 r2 r3 r4 r5 r6 r7 
+*** Adding switches:
+
+*** Adding links:
+(S, r1) (d1, r7) (d2, r4) (d3, r5) (r1, r2) (r1, r3) (r2, r6) (r3, r4) (r3, r5) (r6, r7) 
+*** Configuring hosts
+S d1 d2 d3 r1 r2 r3 r4 r5 r6 r7 
+*** Starting controller
+
+*** Starting 0 switches
+
+
+Total Destination Nodes (N) : 1
+N =  1
+
+Min Destination Nodes (K) : 1
+k =  1
+
+Max Hops (TTL) : 4
+TTL =  4
+
+Wait Time (sec) : 2
+Wait Time =  2.0
+
+Initial RP ['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7'] : r1
+Initial RP =  r1
+
+Sender Node ['S', 'd1', 'd2', 'd3'] : S
+Sender =  S
+
+Destination 1 Node ['d1', 'd2', 'd3'] : d1
+Destination(s) =  ['d1'] 
+
+
+Router Starting....
+Router: name =  r1  id =  10  initial =  10
+*Router Listnig For Packets
+[x] Router (10) Reciving Packet on  ('192.168.1.10', 9010) 
+
+
+Router Starting....
+Router: name =  r2  id =  20  initial =  10
+*Router Listnig For Packets
+[x] Router (20) Reciving Packet on  ('192.168.1.20', 9020) 
+
+
+Router Starting....
+Router: name =  r3  id =  30  initial =  10
+*Router Listnig For Packets
+[x] Router (30) Reciving Packet on  ('192.168.1.30', 9030) 
+
+
+Router Starting....
+Router: name =  r4  id =  40  initial =  10
+*Router Listnig For Packets
+[x] Router (40) Reciving Packet on  ('192.168.1.40', 9040) 
+
+
+Router Starting....
+Router: name =  r5  id =  50  initial =  10
+*Router Listnig For Packets
+[x] Router (50) Reciving Packet on  ('192.168.1.50', 9050) 
+
+
+Router Starting....
+Router: name =  r6  id =  60  initial =  10
+*Router Listnig For Packets
+[x] Router (60) Reciving Packet on  ('192.168.1.60', 9060) 
+
+
+Router Starting....
+Router: name =  r7  id =  70  initial =  10
+*Router Listnig For Packets
+[x] Router (70) Reciving Packet on  ('192.168.1.70', 9070) 
+
+
+Destination Starting....
+Destination: name =  d1  id =  101
+*Destination Reciving Multicast Packet
+
+[x] Destination Reciving Packet on  ('192.168.1.101', 9101) 
+
+
+Sender Starting....
+Sender: name =  S  id =  100
+*Sender Sending Multicast Packet
+     Initial RP =  10  dst =  [101]
+[x] Sender Reciving Packet on  ('192.168.1.100', 9100) 
+
+b'\x01\x00\x04deUnicast To 101'
+Sender Sending : (1, 0, 4, 100, 101) Unicast To 101 To : ('192.168.1.10', 9010)
+
+Router (10) Received :  (1, 0, 4, 100, 101) Unicast To 101  From :  ('192.168.1.100', 40586)
+
+Router (10) Sent :  (1, 0, 3, 100, 101) Unicast To 101  To :  ('192.168.1.20', 9020)
+
+Router (20) Received :  (1, 0, 3, 100, 101) Unicast To 101  From :  ('192.168.1.10', 46183)
+
+Router (20) Sent :  (1, 0, 2, 100, 101) Unicast To 101  To :  ('192.168.1.60', 9060)
+
+Router (60) Received :  (1, 0, 2, 100, 101) Unicast To 101  From :  ('192.168.1.20', 38246)
+
+Router (60) Sent :  (1, 0, 1, 100, 101) Unicast To 101  To :  ('192.168.1.70', 9070)
+
+Router (70) Received :  (1, 0, 1, 100, 101) Unicast To 101  From :  ('192.168.1.60', 55543)
+
+Router (70) Sent :  (1, 0, 0, 100, 101) Unicast To 101  To :  ('192.168.1.101', 9101)
+
+Destination (101) Received :  (1, 0, 0, 100, 101) Unicast To 101  From :  ('192.168.1.70', 46381)
+
+Destination (101) Sent :  (4, 0, 101, 100)  To :  ('192.168.1.70', 9070)
+
+Router (70) Received :  (4, 0, 101, 100)  From :  ('192.168.1.101', 35629)
+
+Router (70) Sent :  (4, 0, 101, 100)  To :  ('192.168.1.60', 9060)
+
+Router (60) Received :  (4, 0, 101, 100)  From :  ('192.168.1.70', 36712)
+
+Router (60) Sent :  (4, 0, 101, 100)  To :  ('192.168.1.20', 9020)
+
+Router (20) Received :  (4, 0, 101, 100)  From :  ('192.168.1.60', 47843)
+
+Router (20) Sent :  (4, 0, 101, 100)  To :  ('192.168.1.10', 9010)
+
+Router (10) Received :  (4, 0, 101, 100)  From :  ('192.168.1.20', 50568)
+
+Router (10) Sent :  (4, 0, 101, 100)  To :  ('192.168.1.100', 9100)
+
+Sender (100) Received :  (4, 0, 101, 100)  From :  ('192.168.1.10', 57224)
+
+Sender (100) reviced ACK For : b'\x01\x00\x04deUnicast To 101' From : 101
+
+Sender (100) reviced all ACKs For : [b'\x01\x00\x04deUnicast To 101']
+
+*** Starting CLI:
+mininet> exit
+*** Stopping 0 controllers
+
+*** Stopping 10 links
+..........
+*** Stopping 0 switches
+
+*** Stopping 11 hosts
+S d1 d2 d3 r1 r2 r3 r4 r5 r6 r7 
+*** Done
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+kill: (11245): No such process
+*** Terminated sshd on hosts.
+kill: (11247): No such process
+rm: cannot remove 'tmp': No such file or directory
+*** Terminated sshd on hosts.
+mininet@mininet-vm:~/Project$ 
+
+*************************************************************************************************************
+Destinations = D2
+-------------------------------------------------------------------------------------------------------------
+mininet@mininet-vm:~/Project$ sudo python3 multicastRP.py
+*** Creating network
+*** Adding hosts:
+S d1 d2 d3 r1 r2 r3 r4 r5 r6 r7 
+*** Adding switches:
+
+*** Adding links:
+(S, r1) (d1, r7) (d2, r4) (d3, r5) (r1, r2) (r1, r3) (r2, r6) (r3, r4) (r3, r5) (r6, r7) 
+*** Configuring hosts
+S d1 d2 d3 r1 r2 r3 r4 r5 r6 r7 
+*** Starting controller
+
+*** Starting 0 switches
+
+
+Total Destination Nodes (N) : 1
+N =  1
+
+Min Destination Nodes (K) : 1
+k =  1
+
+Max Hops (TTL) : 4
+TTL =  4
+
+Wait Time (sec) : 2
+Wait Time =  2.0
+
+Initial RP ['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7'] : r1
+Initial RP =  r1
+
+Sender Node ['S', 'd1', 'd2', 'd3'] : S
+Sender =  S
+
+Destination 1 Node ['d1', 'd2', 'd3'] : d2
+Destination(s) =  ['d2'] 
+
+
+Router Starting....
+Router: name =  r1  id =  10  initial =  10
+*Router Listnig For Packets
+[x] Router (10) Reciving Packet on  ('192.168.1.10', 9010) 
+
+
+Router Starting....
+Router: name =  r2  id =  20  initial =  10
+*Router Listnig For Packets
+[x] Router (20) Reciving Packet on  ('192.168.1.20', 9020) 
+
+
+Router Starting....
+Router: name =  r3  id =  30  initial =  10
+*Router Listnig For Packets
+[x] Router (30) Reciving Packet on  ('192.168.1.30', 9030) 
+
+
+Router Starting....
+Router: name =  r4  id =  40  initial =  10
+*Router Listnig For Packets
+[x] Router (40) Reciving Packet on  ('192.168.1.40', 9040) 
+
+
+Router Starting....
+Router: name =  r5  id =  50  initial =  10
+*Router Listnig For Packets
+[x] Router (50) Reciving Packet on  ('192.168.1.50', 9050) 
+
+
+Router Starting....
+Router: name =  r6  id =  60  initial =  10
+*Router Listnig For Packets
+[x] Router (60) Reciving Packet on  ('192.168.1.60', 9060) 
+
+
+Router Starting....
+Router: name =  r7  id =  70  initial =  10
+*Router Listnig For Packets
+[x] Router (70) Reciving Packet on  ('192.168.1.70', 9070) 
+
+
+Destination Starting....
+Destination: name =  d2  id =  102
+*Destination Reciving Multicast Packet
+
+[x] Destination Reciving Packet on  ('192.168.1.102', 9102) 
+
+
+Sender Starting....
+Sender: name =  S  id =  100
+*Sender Sending Multicast Packet
+     Initial RP =  10  dst =  [102]
+[x] Sender Reciving Packet on  ('192.168.1.100', 9100) 
+
+b'\x01\x00\x04dfUnicast To 102'
+Sender Sending : (1, 0, 4, 100, 102) Unicast To 102 To : ('192.168.1.10', 9010)
+
+Router (10) Received :  (1, 0, 4, 100, 102) Unicast To 102  From :  ('192.168.1.100', 59233)
+
+Router (10) Sent :  (1, 0, 3, 100, 102) Unicast To 102  To :  ('192.168.1.30', 9030)
+
+Router (30) Received :  (1, 0, 3, 100, 102) Unicast To 102  From :  ('192.168.1.10', 52505)
+
+Router (30) Sent :  (1, 0, 2, 100, 102) Unicast To 102  To :  ('192.168.1.40', 9040)
+
+Router (40) Received :  (1, 0, 2, 100, 102) Unicast To 102  From :  ('192.168.1.30', 55355)
+
+Router (40) Sent :  (1, 0, 1, 100, 102) Unicast To 102  To :  ('192.168.1.102', 9102)
+
+Destination (102) Received :  (1, 0, 1, 100, 102) Unicast To 102  From :  ('192.168.1.40', 33035)
+
+Destination (102) Sent :  (4, 0, 102, 100)  To :  ('192.168.1.40', 9040)
+
+Router (40) Received :  (4, 0, 102, 100)  From :  ('192.168.1.102', 49926)
+
+Router (40) Sent :  (4, 0, 102, 100)  To :  ('192.168.1.30', 9030)
+
+Router (30) Received :  (4, 0, 102, 100)  From :  ('192.168.1.40', 60355)
+
+Router (30) Sent :  (4, 0, 102, 100)  To :  ('192.168.1.10', 9010)
+
+Router (10) Received :  (4, 0, 102, 100)  From :  ('192.168.1.30', 43905)
+
+Router (10) Sent :  (4, 0, 102, 100)  To :  ('192.168.1.100', 9100)
+
+Sender (100) Received :  (4, 0, 102, 100)  From :  ('192.168.1.10', 42289)
+
+Sender (100) reviced ACK For : b'\x01\x00\x04dfUnicast To 102' From : 102
+
+Sender (100) reviced all ACKs For : [b'\x01\x00\x04dfUnicast To 102']
+
+*** Starting CLI:
+mininet> exit
+*** Stopping 0 controllers
+
+*** Stopping 10 links
+..........
+*** Stopping 0 switches
+
+*** Stopping 11 hosts
+S d1 d2 d3 r1 r2 r3 r4 r5 r6 r7 
+*** Done
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+kill: (11750): No such process
+*** Terminated sshd on hosts.
+kill: (11752): No such process
+rm: cannot remove 'tmp': No such file or directory
+*** Terminated sshd on hosts.
+mininet@mininet-vm:~/Project$ 
+
+*************************************************************************************************************
+Destinations = D3
+-------------------------------------------------------------------------------------------------------------
+mininet@mininet-vm:~/Project$ sudo python3 multicastRP.py
+*** Creating network
+*** Adding hosts:
+S d1 d2 d3 r1 r2 r3 r4 r5 r6 r7 
+*** Adding switches:
+
+*** Adding links:
+(S, r1) (d1, r7) (d2, r4) (d3, r5) (r1, r2) (r1, r3) (r2, r6) (r3, r4) (r3, r5) (r6, r7) 
+*** Configuring hosts
+S d1 d2 d3 r1 r2 r3 r4 r5 r6 r7 
+*** Starting controller
+
+*** Starting 0 switches
+
+
+Total Destination Nodes (N) : 1
+N =  1
+
+Min Destination Nodes (K) : 1
+k =  1
+
+Max Hops (TTL) : 4
+TTL =  4
+
+Wait Time (sec) : 2
+Wait Time =  2.0
+
+Initial RP ['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7'] : r1
+Initial RP =  r1
+
+Sender Node ['S', 'd1', 'd2', 'd3'] : S
+Sender =  S
+
+Destination 1 Node ['d1', 'd2', 'd3'] : d3
+Destination(s) =  ['d3'] 
+
+
+Router Starting....
+Router: name =  r1  id =  10  initial =  10
+*Router Listnig For Packets
+[x] Router (10) Reciving Packet on  ('192.168.1.10', 9010) 
+
+
+Router Starting....
+Router: name =  r2  id =  20  initial =  10
+*Router Listnig For Packets
+[x] Router (20) Reciving Packet on  ('192.168.1.20', 9020) 
+
+
+Router Starting....
+Router: name =  r3  id =  30  initial =  10
+*Router Listnig For Packets
+[x] Router (30) Reciving Packet on  ('192.168.1.30', 9030) 
+
+
+Router Starting....
+Router: name =  r4  id =  40  initial =  10
+*Router Listnig For Packets
+[x] Router (40) Reciving Packet on  ('192.168.1.40', 9040) 
+
+
+Router Starting....
+Router: name =  r5  id =  50  initial =  10
+*Router Listnig For Packets
+[x] Router (50) Reciving Packet on  ('192.168.1.50', 9050) 
+
+
+Router Starting....
+Router: name =  r6  id =  60  initial =  10
+*Router Listnig For Packets
+[x] Router (60) Reciving Packet on  ('192.168.1.60', 9060) 
+
+
+Router Starting....
+Router: name =  r7  id =  70  initial =  10
+*Router Listnig For Packets
+[x] Router (70) Reciving Packet on  ('192.168.1.70', 9070) 
+
+
+Destination Starting....
+Destination: name =  d3  id =  103
+*Destination Reciving Multicast Packet
+
+[x] Destination Reciving Packet on  ('192.168.1.103', 9103) 
+
+
+Sender Starting....
+Sender: name =  S  id =  100
+*Sender Sending Multicast Packet
+     Initial RP =  10  dst =  [103]
+[x] Sender Reciving Packet on  ('192.168.1.100', 9100) 
+
+b'\x01\x00\x04dgUnicast To 103'
+Sender Sending : (1, 0, 4, 100, 103) Unicast To 103 To : ('192.168.1.10', 9010)
+
+Router (10) Received :  (1, 0, 4, 100, 103) Unicast To 103  From :  ('192.168.1.100', 49638)
+
+Router (10) Sent :  (1, 0, 3, 100, 103) Unicast To 103  To :  ('192.168.1.30', 9030)
+
+Router (30) Received :  (1, 0, 3, 100, 103) Unicast To 103  From :  ('192.168.1.10', 38160)
+
+Router (30) Sent :  (1, 0, 2, 100, 103) Unicast To 103  To :  ('192.168.1.50', 9050)
+
+Router (50) Received :  (1, 0, 2, 100, 103) Unicast To 103  From :  ('192.168.1.30', 60954)
+
+Router (50) Sent :  (1, 0, 1, 100, 103) Unicast To 103  To :  ('192.168.1.103', 9103)
+
+Destination (103) Received :  (1, 0, 1, 100, 103) Unicast To 103  From :  ('192.168.1.50', 54991)
+
+Destination (103) Sent :  (4, 0, 103, 100)  To :  ('192.168.1.50', 9050)
+
+Router (50) Received :  (4, 0, 103, 100)  From :  ('192.168.1.103', 46202)
+
+Router (50) Sent :  (4, 0, 103, 100)  To :  ('192.168.1.30', 9030)
+
+Router (30) Received :  (4, 0, 103, 100)  From :  ('192.168.1.50', 39480)
+
+Router (30) Sent :  (4, 0, 103, 100)  To :  ('192.168.1.10', 9010)
+
+Router (10) Received :  (4, 0, 103, 100)  From :  ('192.168.1.30', 51894)
+
+Router (10) Sent :  (4, 0, 103, 100)  To :  ('192.168.1.100', 9100)
+
+Sender (100) Received :  (4, 0, 103, 100)  From :  ('192.168.1.10', 40705)
+
+Sender (100) reviced ACK For : b'\x01\x00\x04dgUnicast To 103' From : 103
+
+Sender (100) reviced all ACKs For : [b'\x01\x00\x04dgUnicast To 103']
+
+*** Starting CLI:
+mininet> exit
+*** Stopping 0 controllers
+
+*** Stopping 10 links
+..........
+*** Stopping 0 switches
+
+*** Stopping 11 hosts
+S d1 d2 d3 r1 r2 r3 r4 r5 r6 r7 
+*** Done
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+kill: (12842): No such process
+*** Terminated sshd on hosts.
+kill: (12844): No such process
+rm: cannot remove 'tmp': No such file or directory
+*** Terminated sshd on hosts.
+mininet@mininet-vm:~/Project$ 
